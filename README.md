@@ -50,6 +50,12 @@ Create a new repository or clone an existing one and make your first commit to v
     python -m venv venv
     ```
 
+1.0 **Activate virtual env**
+    ---bash
+    .\venv\Scripts\activate
+    ---
+
+    
 2.  **Generate the dependencies file (`requirements.txt`):**
     ```bash
     pip freeze > requirements.txt
@@ -90,19 +96,19 @@ Follow these steps to install and configure PostgreSQL on Windows Subsystem for 
     sudo -u postgres psql
     ```
 
-2.  **Access PostgreSQL interactive terminal `geovany`:**
+2.  **Access PostgreSQL interactive terminal `makiesse`:**
     ```sql
-    CREATE USER geovany WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD '123456789';
+    CREATE USER makiesse WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD '123456789';
     ```
 
 3.  **Create database `analise_funcionarios` and set owner:**
     ```sql
-    CREATE DATABASE analise_funcionarios OWNER geovany;
+    CREATE DATABASE analise_funcionarios OWNER makiesse;
     ```
 
 4.  **Grant privileges to the new database:**
     ```sql
-    GRANT ALL PRIVILEGES ON DATABASE analise_funcionarios TO geovany;
+    GRANT ALL PRIVILEGES ON DATABASE analise_funcionarios TO makiesse;
     ```
 
 #### **External Access Configuration (Windows)**
@@ -115,7 +121,7 @@ Allow DBeaver, Python, and other tools on Windows to connect to the database run
     ```
 
 2.  **Edit `postgresql.conf`:**
-    * Abra o arquivo no editor de texto:
+    * Open the file in the text editor:
         ```bash
         sudo nano /etc/postgresql/16/main/postgresql.conf
         ```
@@ -147,7 +153,7 @@ Allow DBeaver, Python, and other tools on Windows to connect to the database run
 Enable port 5432 for PostgreSQL in Windows Firewall to allow connections.
 
 1.  Open Windows **Firewall with Advanced Security**.
-2.  No painel esquerdo, clique em **Regras de Entrada** e, em seguida, em **Nova Regra...** no painel da direita.
+2.  In the left panel, click **Inbound Rules**, and then click **New Rule**... in the right panel. 
 3. **Follow the wizard:**
 
 * **Rule Type:** Select **Port**.
